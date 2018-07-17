@@ -12,6 +12,7 @@ class Images extends React.Component {
 
 
     componentDidMount(){
+        
         return (<div className="Images">
             <input
                 onChange={this.handleInput}
@@ -29,50 +30,32 @@ class Images extends React.Component {
     state = {
         input: '',
         results: [],
-        errors:[]
+        errors:[],
+        loading:false
     }
 
     handleInput = (e) => {
         this.setState({ input: e.target.value })
     };
 
-    getImages = async () => {
+    getImages =  () => {
         unsplash.search.photos(`${this.state.input}`, 1)
-            .then(await function (response) {
+            .then(this.setState({ loading: true }))
+            .then(function (response) {
                 return response.json();
             })
             .then((myJson) => {
+                this.setState({ loading: false })
                 const results = myJson.results;
                 this.setState({ results })
+                this.setState({ errors:[] })
             if(this.state.results.length===0){
                 this.setState({errors:[...this.state.errors, 'we got an error']})
             }
             })
     };
 
-    redirectToAuthor = (author) => {
-        const authorName = author;
-        window.location.href = "https://unsplash.com/@" + authorName + "?utm_source=image-search&utm_medium=referral";
-    }
-
     render() {
-
-        if(this.state.errors.length>0){
-            return (<div className="Images">
-                <h2>there are no results for this keyword</h2>
-                <input
-                    onChange={this.handleInput}
-                    value={this.state.input}
-                    type="text"
-                    placeholder="keyword" />
-                <div
-                    onClick={this.getImages}
-                    className="btn">
-                    Search
-                </div>
-            </div>);
-        }
-            
 
         const images = this.state.results.map((image, i) => {
 
@@ -99,18 +82,22 @@ class Images extends React.Component {
             </div>)
         });
 
+        
+
         return (
             <div className="Images">
                 <input
                     onChange={this.handleInput}
                     value={this.state.input}
                     type="text"
-                    placeholder="keyword" />
+                    placeholder="enter keyword" />
+                {this.state.errors.length > 0 ? <h2>there are no results for this keyword</h2>:null }
                 <div
                     onClick={this.getImages}
                     className="btn">
                     Search
                 </div>
+                {this.state.loading ? <div className="loader"></div> : null}
                 <div className="image-grid">
                     {images}
                 </div>

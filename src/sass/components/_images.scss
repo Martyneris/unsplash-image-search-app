@@ -21,6 +21,7 @@
         border-radius:8px;
         text-transform: capitalize;
         box-shadow: none;
+        border: 1px solid #C5BAA7;
     }
     input, select{
         color: #000;
@@ -67,6 +68,7 @@
             margin-top: 7px;
             border-radius:3px;
             overflow: hidden;
+            transition: 0.3s;
             &:hover{
             box-shadow: 0 1px 8px black;
             }

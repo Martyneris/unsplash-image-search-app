@@ -69,6 +69,7 @@
             border-radius:3px;
             overflow: hidden;
             transition: 0.3s;
+            position: relative;
             &:hover{
             box-shadow: 0 1px 8px black;
             }
@@ -77,37 +78,47 @@
             border-radius:4px;
             min-height: 150px;
             max-height: 300px;
+            &:hover a{
+                opacity:1;
+                border: 1px solid #fff;
+                border-radius:4px;
+                padding:5px;
+            }
             img{
             width: 100%;
             transition:0.4s;
+            -webkit-filter: brightness(100%);
             &:hover{
             transform: scale(1.1);
+            -webkit-filter: brightness(40%);
+            -webkit-transition: all 1s ease;
+            -moz-transition: all 1s ease;
+            -o-transition: all 1s ease;
+            -ms-transition: all 1s ease;
+            transition: all 1s ease;
             }
             }
+            
+            a{
+            font-size: 14px;
+            text-transform: capitalize;
+            margin: 5px;
+            font-weight: 600;
+            color:#fff;
+            position: absolute;
+            z-index:999;
+            opacity:0;
+            transition: 0.3s;
             }
-            .author{
-                width: 70%;
-                display: flex;
-                justify-content: space-between;
-                margin: 5px;
-                a{
-                    font-size: 14px;
-                    text-transform: capitalize;
-                    margin: 5px;
-                    font-weight: 600;
-                }
-                ul{
-                    margin:auto;
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: space-between;
-                    .user-tag{
-                        float:left;
-                    }
-                    .unsplash-tag{
-                        float:right;
-                    }
-                }
+            .user-tag{
+            left: 7%;
+            top: 7%;
+            }
+            .unsplash-tag{
+            right: 7%;
+            top: 7%;
+            }
+                
             }
         }
     }

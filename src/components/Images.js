@@ -62,14 +62,10 @@ class Images extends React.Component {
             let author = image.user.username;
             let address = "https://unsplash.com/@" + author + "?utm_source=image-search&utm_medium=referral";
 
-            return (<div className="wrapper">
+            return (<div className="wrapper" key={i}>
                 <div className="img-wrapper">
                 <img src={image.urls.regular}
-                    key={i}
                     alt={image.description}/>
-                </div>
-                <div className="author">
-                    <ul>
                     <a href={address}
                     className="user-tag">
                     {image.user.name}
@@ -77,7 +73,6 @@ class Images extends React.Component {
                     <a href="https://unsplash.com/?utm_source=image-search&utm_medium=referral"
                     className="unsplash-tag"> 
                     on Unsplash </a>
-                    </ul>
                 </div>
             </div>)
         });

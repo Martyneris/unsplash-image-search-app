@@ -1,0 +1,112 @@
+.Images{
+    width: 800px;
+    border-right: 2px solid black;
+    margin: 30px 80px;
+    background: #94897A;
+    border-radius:3px;
+    float:left;
+    h2{
+        font-size: 16px;
+        text-transform: capitalize;
+    }
+    input{
+        display: block;
+        font-size: 20px;
+        width: 50%;
+        margin:20px auto;
+        padding: 10px 0;
+        box-sizing: border-box;
+        text-align: center;
+        outline:none;
+        border-radius:8px;
+        text-transform: capitalize;
+        box-shadow: none;
+    }
+    input, select{
+        color: #000;
+    }
+    input:focus {
+        color: #000;
+        outline:none;
+    }
+    ::placeholder{
+        color: #000;    
+    }
+    input[type="text"], textarea {
+        background-color : #C5BAA7; 
+    }
+    .btn{
+        width: 50%;
+        margin: 20px auto;
+        padding: 10px 0;
+        transition: .3s;
+        font-size: 16px;
+        letter-spacing: 2px;
+        font-weight: 900;
+        border: 3px solid #C5BAA7;
+        background: #C5BAA7;
+        color:#000;
+        border-radius:10px;
+        cursor: pointer;
+        user-select: none;
+        text-transform: uppercase;
+        &:active {
+            transform:scale(0.95)
+        }
+    }
+    .image-grid{
+        display:flex;
+        flex-wrap:wrap;
+        justify-content: space-between;
+        margin: 20px 5%;
+        .wrapper{
+            width: 40%;
+            padding: 10px;
+            align-content: center;
+            background: #C5BAA7;
+            margin-top: 7px;
+            border-radius:3px;
+            overflow: hidden;
+            &:hover{
+            box-shadow: 0 1px 8px black;
+            }
+            .img-wrapper{
+            overflow: hidden;
+            border-radius:4px;
+            min-height: 150px;
+            max-height: 300px;
+            img{
+            width: 100%;
+            transition:0.4s;
+            &:hover{
+            transform: scale(1.1);
+            }
+            }
+            }
+            .author{
+                width: 70%;
+                display: flex;
+                justify-content: space-between;
+                margin: 5px;
+                a{
+                    font-size: 14px;
+                    text-transform: capitalize;
+                    margin: 5px;
+                    font-weight: 600;
+                }
+                ul{
+                    margin:auto;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    .user-tag{
+                        float:left;
+                    }
+                    .unsplash-tag{
+                        float:right;
+                    }
+                }
+            }
+        }
+    }
+}

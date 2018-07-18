@@ -65,10 +65,6 @@ class Images extends React.Component {
             })
     };
 
-    save = (e) => {
-        localStorage.setItem('savedQueries', JSON.stringify(e))
-    };
-
     handleInput = (e) => {
         this.setState({ input: e.target.value })
     };

@@ -40,7 +40,6 @@ class Images extends React.Component {
         input: '',
         results: [],
         errors: [],
-        savedQueries: [],
         loading: false,
         active: false,
     };

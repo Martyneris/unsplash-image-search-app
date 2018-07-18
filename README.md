@@ -5,6 +5,7 @@ A web application created with ReactJS
  - Unsplash.com image retrieval API implemented
  - User is able to search images by entered keywords
 
+
  Image app functionality:
 
  - Keyword (search) input field
@@ -13,6 +14,7 @@ A web application created with ReactJS
  - Application shows loading indicator while images are being fetched
  - If there are no images by entered keyword user sees a message with relevant information
  - User can save a chosen query in Redux state. Application then lists saved queries, that         when pressed is repeated again and user gets pictures by saved query.
+
 
  Additional info:
 

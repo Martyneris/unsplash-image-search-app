@@ -21,5 +21,5 @@ A web application created with ReactJS
  Additional info:
 
  - Application is deployed to Heroku
- - Used tools > React, Redux, Sass
+ - Used tools > React, Redux, Sass, unsplash.js
  - Unsplash API guidelines were followed

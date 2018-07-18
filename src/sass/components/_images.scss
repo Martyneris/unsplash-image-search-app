@@ -1,3 +1,5 @@
+@import "components/_media.scss";
+
 .Images{
     width: 800px;
     border-right: 2px solid black;
@@ -109,17 +111,41 @@
             z-index:999;
             opacity:0;
             transition: 0.3s;
+            @include mobile{
+            font-size: 8px;
+            margin:0;
+            font-weight: normal;
+            }
             }
             .user-tag{
             left: 7%;
             top: 7%;
+            @include mobile{
+            left: 4%;
+            top: 4%;
+            }
             }
             .unsplash-tag{
             right: 7%;
             top: 7%;
+            @include mobile{
+            right: 4%;
+            top: 4%;
+            }
             }
                 
             }
         }
     }
+    @media (max-width: 768px) {
+        width: 90%;
+       margin: 30px 3%;
+       float: none;
+    }
+    @include mobile{
+       width: 90%;
+       margin: 30px 3%;
+       float: none;
+    }
 }
+

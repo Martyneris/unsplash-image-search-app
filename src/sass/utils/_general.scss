@@ -10,5 +10,8 @@ body {
         float: left;
         margin: 60px;
         display:block;
+    @include mobile{
+        font-size: 20px;
+        }
     }
 }

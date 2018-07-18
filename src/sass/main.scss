@@ -3,7 +3,9 @@
 @import "base/_reset.scss";
 
 @import "components/_images.scss";
+@import "components/_media.scss";
 
+@import "utils/media";
 @import "utils/_general.scss";
 @import "utils/_vars.scss";
 @import "utils/_animate.scss";

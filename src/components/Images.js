@@ -14,7 +14,7 @@ const unsplash = new Unsplash2({
 class Images extends React.Component {
 
     componentDidMount() {
-        
+
         this.nameInput.focus();
 
         return (<div className="Images">
@@ -30,7 +30,7 @@ class Images extends React.Component {
                 Search
                 </div>
             <div
-                onClick={() => this.props.addQuery(this.state.input)}className="save">
+                onClick={() => this.props.addQuery(this.state.input)} className="save">
                 Save query
                 </div>
         </div>);
@@ -40,7 +40,7 @@ class Images extends React.Component {
         input: '',
         results: [],
         errors: [],
-        savedQueries:[],
+        savedQueries: [],
         loading: false,
         active: false,
     };
@@ -105,13 +105,13 @@ class Images extends React.Component {
                 <div className="img-wrapper">
                     <img src={image.urls.regular}
                         alt={image.description} />
-                    <a  rel="noopener noreferrer"
+                    <a rel="noopener noreferrer"
                         target="_blank"
                         href={address}
                         className="user-tag">
                         {name}...
                     </a>
-                    <a  rel="noopener noreferrer"
+                    <a rel="noopener noreferrer"
                         target="_blank"
                         href="https://unsplash.com/?utm_source=image-search&utm_medium=referral"
                         className="unsplash-tag">
@@ -167,7 +167,6 @@ class Images extends React.Component {
                 </div>
                 <div className="saved-queries">
                     <h3>saved queries</h3>
-                    
                     <ul>
                         {queries}
                     </ul>
@@ -176,7 +175,7 @@ class Images extends React.Component {
                         onClick={this.togglePopup}>
                         remove all queries
                     </div>
-                    
+
                 </div>
             </div>
         )

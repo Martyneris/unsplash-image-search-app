@@ -98,8 +98,6 @@ class Images extends React.Component {
             let address = "https://unsplash.com/@" + author + "?utm_source=image-search&utm_medium=referral";
             let name = image.user.name.slice(0, 7);
 
-            // <a target="_blank" rel="noopener noreferrer" href="http://your_url_here.html">Link</a>
-
             return (<div className="wrapper" key={i}>
                 <div className="img-wrapper">
                     <img src={image.urls.regular}
@@ -133,7 +131,7 @@ class Images extends React.Component {
             )
         });
 
-        
+
         return (
             <div className="container">
                 <div className="Images">

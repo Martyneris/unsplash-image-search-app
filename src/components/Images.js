@@ -14,9 +14,12 @@ const unsplash = new Unsplash2({
 class Images extends React.Component {
 
     componentDidMount() {
+        
+        this.nameInput.focus();
 
         return (<div className="Images">
             <input
+                ref={(input) => { this.nameInput = input; }}
                 onChange={this.handleInput}
                 value={this.state.input}
                 type="text"
@@ -27,8 +30,7 @@ class Images extends React.Component {
                 Search
                 </div>
             <div
-                onClick={() => this.props.addQuery(this.state.input)}
-                className="save">
+                onClick={() => this.props.addQuery(this.state.input)}className="save">
                 Save query
                 </div>
         </div>);
@@ -38,6 +40,7 @@ class Images extends React.Component {
         input: '',
         results: [],
         errors: [],
+        savedQueries:[],
         loading: false,
         active: false,
     };
@@ -61,7 +64,11 @@ class Images extends React.Component {
                     this.setState({ errors: [...this.state.errors, 'we got an error'] })
                 }
             })
-    }
+    };
+
+    save = (e) => {
+        localStorage.setItem('savedQueries', JSON.stringify(e))
+    };
 
     handleInput = (e) => {
         this.setState({ input: e.target.value })
@@ -92,15 +99,21 @@ class Images extends React.Component {
             let address = "https://unsplash.com/@" + author + "?utm_source=image-search&utm_medium=referral";
             let name = image.user.name.slice(0, 7);
 
+            // <a target="_blank" rel="noopener noreferrer" href="http://your_url_here.html">Link</a>
+
             return (<div className="wrapper" key={i}>
                 <div className="img-wrapper">
                     <img src={image.urls.regular}
                         alt={image.description} />
-                    <a href={address}
+                    <a  rel="noopener noreferrer"
+                        target="_blank"
+                        href={address}
                         className="user-tag">
                         {name}...
                     </a>
-                    <a href="https://unsplash.com/?utm_source=image-search&utm_medium=referral"
+                    <a  rel="noopener noreferrer"
+                        target="_blank"
+                        href="https://unsplash.com/?utm_source=image-search&utm_medium=referral"
                         className="unsplash-tag">
                         on Unsplash </a>
                 </div>
@@ -121,7 +134,7 @@ class Images extends React.Component {
             )
         });
 
-
+        
         return (
             <div className="container">
                 <div className="Images">
@@ -131,6 +144,7 @@ class Images extends React.Component {
                         remove={this.props.removeAllQueries}
                         question="you sure?" />
                     <input
+                        ref={(input) => { this.nameInput = input; }}
                         onChange={this.handleInput}
                         value={this.state.input}
                         type="text"
@@ -153,6 +167,7 @@ class Images extends React.Component {
                 </div>
                 <div className="saved-queries">
                     <h3>saved queries</h3>
+                    
                     <ul>
                         {queries}
                     </ul>
@@ -161,6 +176,7 @@ class Images extends React.Component {
                         onClick={this.togglePopup}>
                         remove all queries
                     </div>
+                    
                 </div>
             </div>
         )

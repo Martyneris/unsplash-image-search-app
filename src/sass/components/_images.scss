@@ -7,38 +7,40 @@
     @include mobile{
     flex-direction: column;
     }
-.Images{
-    width: 800px;
-    border-right: 2px solid black;
-    margin: 30px 80px;
-    background: #94897A;
-    border-radius:3px;
-    float:left;
-    h2{
-        font-size: 16px;
-        text-transform: capitalize;
-    }
-    input{
-        display: block;
-        font-size: 20px;
-        width: 50%;
-        margin:20px auto;
-        padding: 10px 0;
-        box-sizing: border-box;
-        text-align: center;
-        outline:none;
-        border-radius:8px;
-        text-transform: capitalize;
-        box-shadow: none;
-        border: 1px solid #C5BAA7;
-    }
-    input, select{
-        color: #000;
-    }
-    input:focus {
-        color: #000;
-        outline:none;
-    }
+    .Images{
+         width: 800px;
+         border-right: 2px solid black;
+         margin: 30px 80px;
+         background: #94897A;
+         border-radius:3px;
+         float:left;
+        h2{
+            font-size: 16px;
+            text-transform: capitalize;
+            font-weight: 600;
+            color: #b30000;
+          }
+        input{
+            display: block;
+            font-size: 20px;
+            width: 50%;
+            margin:20px auto;
+            padding: 10px 0;
+            box-sizing: border-box;
+            text-align: center;
+            outline:none;
+            border-radius:8px;
+            text-transform: capitalize;
+            box-shadow: none;
+            border: 1px solid #C5BAA7;
+            }
+        input, select{
+            color: #000;
+            }
+        input:focus {
+            color: #000;
+            outline:none;
+            }
     ::placeholder{
         color: #000;    
     }
@@ -65,6 +67,10 @@
         &:active {
             transform:scale(0.95)
         }
+        @include mobile{
+        font-size: 12px;
+        width: 35%;
+        }
     }
     .save{
         display:inline-block;
@@ -84,6 +90,10 @@
         text-transform: uppercase;
         &:active {
             transform:scale(0.95)
+        }
+        @include mobile{
+        font-size: 12px;
+        width: 35%;
         }
     }
     .image-grid{
@@ -227,6 +237,7 @@
     margin: 30px auto;
     background: #94897A;
     border-radius:3px;
+    
     h3{
         font-size: 26px;
         font-weight: 700;
@@ -238,11 +249,13 @@
         font-weight: 600;
         text-transform: capitalize;
         margin: 5px auto;
+        border: 1px solid #C5BAA7;
+        cursor:pointer;
         span{
             font-weight: 900;
             color: red;
             margin-left: 5px;
-            cursor:pointer;
+            cursor: pointer;
         }
     }
 }

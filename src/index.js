@@ -8,7 +8,7 @@ import { Provider } from 'react-redux';
 import queryReducer from './reducers/QueryReducer';
 
 const rootReducer = combineReducers({
-    queries:queryReducer,
+    queries: queryReducer,
 });
 
 const store = createStore(

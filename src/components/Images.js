@@ -108,7 +108,7 @@ class Images extends React.Component {
                         target="_blank"
                         href="https://unsplash.com/?utm_source=image-search&utm_medium=referral"
                         className="unsplash-tag">
-                        on Unsplash </a>
+                        Unsplash</a>
                 </div>
             </div>)
         });
@@ -163,13 +163,12 @@ class Images extends React.Component {
                     <ul>
                         {queries}
                     </ul>
-                    {this.props.queries.length>0?
+                    {this.props.queries.length > 0 ?
                         <div
                             className="remove"
                             onClick={this.togglePopup}>
                             remove all queries
-                    </div>:null}
-
+                    </div> : null}
                 </div>
             </div>
         )

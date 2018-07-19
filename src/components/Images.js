@@ -163,11 +163,12 @@ class Images extends React.Component {
                     <ul>
                         {queries}
                     </ul>
-                    <div
-                        className="remove"
-                        onClick={this.togglePopup}>
-                        remove all queries
-                    </div>
+                    {this.props.queries.length>0?
+                        <div
+                            className="remove"
+                            onClick={this.togglePopup}>
+                            remove all queries
+                    </div>:null}
 
                 </div>
             </div>
